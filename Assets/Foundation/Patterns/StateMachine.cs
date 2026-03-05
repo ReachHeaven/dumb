@@ -45,6 +45,5 @@ namespace Foundation.Patterns
         {
             _currentState?.Update();
         }
-
     }
 }

@@ -1,5 +1,8 @@
-﻿namespace Foundation.Events
+﻿using UnityEngine;
+
+namespace Foundation.Events
 {
-    public class FloatGameEvent :  GameEvent<float> { }
-    public class FloatGameEventListener :  GameEventListener<float> { }
+    [CreateAssetMenu(fileName = "NewFloatEvent", menuName = "Foundation/Events/Float Event")]
+    public class FloatGameEvent : GameEvent<float> { }
+    public class FloatGameEventListener : GameEventListener<float> { }
 }

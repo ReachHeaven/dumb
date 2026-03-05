@@ -10,6 +10,8 @@ namespace Foundation.Services
     /// </summary>
     public class ServiceLocator
     {
+
+
         private static readonly Dictionary<Type, object>  _services = new();
 
         /// <summary>
@@ -22,7 +24,6 @@ namespace Foundation.Services
             if (_services.ContainsKey(type))
             {
                 Debug.LogWarning($"[ServiceLocator] Overwriting {type.Name}");
-
             }
 
             _services[type] = service;

@@ -1,5 +1,9 @@
-﻿namespace Foundation.Events
+﻿using UnityEngine;
+
+namespace Foundation.Events
 {
-    public class StringGameEvent :  GameEvent<string> { }
-    public class StringGameEventListener :  GameEventListener<string> { }
+    [CreateAssetMenu(fileName = "NewStringEvent", menuName = "Foundation/Events/String Event")]
+
+    public class StringGameEvent : GameEvent<string> { }
+    public class StringGameEventListener : GameEventListener<string> { }
 }
