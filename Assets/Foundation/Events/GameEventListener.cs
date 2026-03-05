@@ -15,12 +15,12 @@ namespace Foundation.Events
         [SerializeField]
         private UnityEvent response;
 
-        private void onEnable()
+        private void OnEnable()
         {
             gameEvent?.Register(this);
         }
 
-        private void onDisable()
+        private void OnDisable()
         {
             gameEvent?.Unregister(this);
         }

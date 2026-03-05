@@ -15,7 +15,7 @@ namespace Foundation.Services
         /// <summary>
         /// Register a service instance by its interface type.
         /// </summary>
-        private static void Register<T>(T service) where T : class
+        public static void Register<T>(T service) where T : class
         {
             Type type = typeof(T);
 

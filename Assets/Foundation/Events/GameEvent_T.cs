@@ -10,9 +10,9 @@ namespace Foundation.Events
 
         public void Raise(T value)
         {
-            foreach (GameEventListener<T> listener in _listeners)
+            for (int i = _listeners.Count - 1; i >= 0; i--)
             {
-                listener.OnEventRaised(value);
+                _listeners[i].OnEventRaised(value);
             }
         }
 
