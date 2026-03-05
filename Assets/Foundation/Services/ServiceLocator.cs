@@ -11,8 +11,7 @@ namespace Foundation.Services
     public class ServiceLocator
     {
 
-
-        private static readonly Dictionary<Type, object>  _services = new();
+        private static readonly Dictionary<Type, object> _services = new();
 
         /// <summary>
         /// Register a service instance by its interface type.
