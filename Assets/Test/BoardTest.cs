@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Game.Core;
 using UnityEngine;
 
-namespace Game.Core
+namespace Test
 {
     public class BoardTest : MonoBehaviour
     {
