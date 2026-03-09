@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
@@ -8,7 +7,7 @@ namespace Game.Core
     public class GameBoard
     {
         private const int MaxCapacity = 16;
-        private readonly  int [,] _cells = new int[4,4];
+        private readonly int [,] _cells = new int[4,4];
         private readonly Random _random = new();
 
         /// <summary>
@@ -49,6 +48,7 @@ namespace Game.Core
 
             _cells[cell.row, cell.col] = value;
         }
+
         /// <summary>
         /// Debug method
         /// </summary>
