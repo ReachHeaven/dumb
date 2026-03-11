@@ -250,5 +250,20 @@ namespace Game.Core
 
             Debug.Log(output);
         }
+
+        public int[] GetFlatBoard()
+        {
+            int[] flat = new int[GridSize * GridSize];
+
+            for (int i = 0; i < GridSize; i++)
+            {
+                for (int j = 0; j < GridSize; j++)
+                {
+                    flat[i * GridSize + j] = _cells[i, j];
+                }
+            }
+
+            return flat;
+        }
     }
 }

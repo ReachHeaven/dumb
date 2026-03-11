@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using Foundation.Events;
+using Game.UI;
 using UnityEngine;
 
 namespace Game.Core
@@ -8,6 +9,8 @@ namespace Game.Core
     {
         [SerializeField] private IntGameEvent onScoreChanged;
         [SerializeField] private GameEvent onGameOver;
+        [SerializeField] private BoardView boardView;
+        [SerializeField] private ScoreView scoreView;
         private readonly GameBoard _gameBoard = new();
 
         private void Start()
@@ -29,7 +32,8 @@ namespace Game.Core
             if (moved)
             {
                 onScoreChanged.Raise(_gameBoard.Score);
-                _gameBoard.PrintBoard();
+                scoreView.UpdateScore(_gameBoard.Score);
+                boardView.UpdateBoard(_gameBoard.GetFlatBoard());
             }
 
             if (_gameBoard.IsGameOver())
