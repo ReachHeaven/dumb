@@ -1,16 +1,23 @@
-﻿using UnityEngine;
+﻿using Game.Data;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.UI
 {
     public class BoardView : MonoBehaviour
     {
-        [SerializeField] CellView[] _cells;
+        [FormerlySerializedAs("_cells")] [SerializeField] private CellView[] cells;
+        [FormerlySerializedAs("_boardData")] [SerializeField] private BoardData boardData;
 
-        public void UpdateBoard(int[] flatBoard)
+        /// <summary>
+        /// UpdateBoard by BoardData
+        /// </summary>
+        public void UpdateBoard()
         {
-            for (int i = 0; i < _cells.Length; i++)
+            int[] board = boardData.Board;
+            for (int i = 0; i < cells.Length; i++)
             {
-                _cells[i].SetValue(flatBoard[i]);
+                cells[i].SetValue(board[i]);
             }
         }
     }

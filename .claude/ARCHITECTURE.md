@@ -18,6 +18,7 @@ Assets/
     Utils/             — future helpers
   Game/                — game-specific code
     Core/              — Bootstrap, GameManager
+    Data/              — shared ScriptableObject data containers (e.g. BoardData)
     Gameplay/          — player, enemies, mechanics
     UI/                — screens, HUD
   Art/
@@ -35,6 +36,14 @@ Assets/
                                      → [GameEventListener on System C]
 ```
 No system knows about the others. All know the event asset.
+
+### Shared SO Data Bus
+ScriptableObjects that hold runtime state (e.g. `BoardData`) act as a shared data bus:
+```
+[System A] → writes to SO → [SO asset] → read by [System B], [System C]
+```
+Any layer (Core, UI, Gameplay) may hold a `[SerializeField]` reference to a shared data SO.
+This is NOT a coupling violation — the SO is the decoupling mechanism, not a direct system reference.
 
 ## Service Access Flow
 ```

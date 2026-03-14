@@ -1,6 +1,6 @@
 ﻿using Foundation;
 using Foundation.Events;
-using Game.UI;
+using Game.Data;
 using UnityEngine;
 
 namespace Game.Core
@@ -10,7 +10,8 @@ namespace Game.Core
         [SerializeField] private IntGameEvent onScoreChanged;
         [SerializeField] private GameEvent onGameOver;
         [SerializeField] private GameEvent onRestart;
-        [SerializeField] private BoardView boardView;
+        [SerializeField] private BoardData boardData;
+        [SerializeField] private GameEvent onBoardChanged;
         private readonly GameBoard _gameBoard = new();
 
         private void Start()
@@ -32,7 +33,8 @@ namespace Game.Core
             if (moved)
             {
                 onScoreChanged.Raise(_gameBoard.Score);
-                boardView.UpdateBoard(_gameBoard.GetFlatBoard());
+                boardData.UpdateBoard(_gameBoard.GetFlatBoard());
+                onBoardChanged.Raise();
             }
 
             if (_gameBoard.IsGameOver())
@@ -42,11 +44,15 @@ namespace Game.Core
             }
         }
 
+        /// <summary>
+        /// Restart game method
+        /// </summary>
         public void Restart()
         {
-            onRestart.Raise();
             _gameBoard.Reset();
-            boardView.UpdateBoard(_gameBoard.GetFlatBoard());
+            onRestart.Raise();
+            boardData.UpdateBoard(_gameBoard.GetFlatBoard());
+            onBoardChanged.Raise();
         }
     }
 }

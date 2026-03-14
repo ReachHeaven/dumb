@@ -4,6 +4,7 @@
 | Element | Convention | Example |
 |---------|-----------|---------|
 | Private field | _camelCase | _moveSpeed |
+| [SerializeField] private field | camelCase | moveSpeed |
 | Public property | PascalCase | MoveSpeed |
 | Constant | PascalCase | MaxHealth |
 | Interface | IPascalCase | IAudioService |
