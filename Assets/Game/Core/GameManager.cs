@@ -10,7 +10,6 @@ namespace Game.Core
         [SerializeField] private IntGameEvent onScoreChanged;
         [SerializeField] private GameEvent onGameOver;
         [SerializeField] private BoardView boardView;
-        [SerializeField] private ScoreView scoreView;
         private readonly GameBoard _gameBoard = new();
 
         private void Start()
@@ -32,7 +31,6 @@ namespace Game.Core
             if (moved)
             {
                 onScoreChanged.Raise(_gameBoard.Score);
-                scoreView.UpdateScore(_gameBoard.Score);
                 boardView.UpdateBoard(_gameBoard.GetFlatBoard());
             }
 
