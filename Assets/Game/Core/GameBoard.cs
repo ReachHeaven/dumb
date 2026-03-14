@@ -9,7 +9,7 @@ namespace Game.Core
     {
         private const int MaxCapacity = 16;
         private const int GridSize = 4;
-        private readonly int[,] _cells = new int[GridSize, GridSize];
+        private int[,] _cells = new int[GridSize, GridSize];
         private int _score;
         private readonly Random _random = new();
 
@@ -229,6 +229,14 @@ namespace Game.Core
             int value = _random.Next(10) == 0 ? 4 : 2;
 
             _cells[cell.row, cell.col] = value;
+        }
+
+        public void Reset()
+        {
+            _cells = new int[GridSize, GridSize];
+            _score = 0;
+            SpawnRandomTile();
+            SpawnRandomTile();
         }
 
         /// <summary>

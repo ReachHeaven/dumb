@@ -9,6 +9,7 @@ namespace Game.Core
     {
         [SerializeField] private IntGameEvent onScoreChanged;
         [SerializeField] private GameEvent onGameOver;
+        [SerializeField] private GameEvent onRestart;
         [SerializeField] private BoardView boardView;
         private readonly GameBoard _gameBoard = new();
 
@@ -39,6 +40,13 @@ namespace Game.Core
                 onGameOver.Raise();
                 Debug.Log("GAME OVER! Score: " + _gameBoard.Score);
             }
+        }
+
+        public void Restart()
+        {
+            onRestart.Raise();
+            _gameBoard.Reset();
+            boardView.UpdateBoard(_gameBoard.GetFlatBoard());
         }
     }
 }

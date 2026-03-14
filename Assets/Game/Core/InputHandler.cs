@@ -1,6 +1,7 @@
 ﻿using Foundation;
 using Foundation.Events;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
@@ -13,9 +14,15 @@ namespace Game.Core
 
         private Vector2 _touchStart;
         private bool _isTouching;
+        private bool _isActive = true;
 
         private void Update()
         {
+            if (!_isActive)
+            {
+                return;
+            }
+
             Keyboard keyboard = Keyboard.current;
 
             if (keyboard != null)
@@ -76,6 +83,16 @@ namespace Game.Core
             }
 
             return delta.y > 0 ? Direction.Up : Direction.Down;
+        }
+
+        public void Disable()
+        {
+            _isActive = false;
+        }
+
+        public void Enable()
+        {
+            _isActive = true;
         }
     }
 }
