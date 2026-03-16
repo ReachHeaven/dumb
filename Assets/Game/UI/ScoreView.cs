@@ -12,9 +12,14 @@ namespace Game.UI
             scoreText.text = $"Score: {value.ToString()}";
         }
 
+        public void UpdateBestScore()
+        {
+            scoreText.color = Color.darkGoldenRod;
+        }
+
         public void OnRestart()
         {
-            scoreText.text = $"Score: 0";
+            UpdateScore(0);
         }
     }
 }

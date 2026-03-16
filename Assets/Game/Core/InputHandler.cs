@@ -14,7 +14,7 @@ namespace Game.Core
 
         private Vector2 _touchStart;
         private bool _isTouching;
-        private bool _isActive = true;
+        private bool _isActive;
 
         private void Update()
         {

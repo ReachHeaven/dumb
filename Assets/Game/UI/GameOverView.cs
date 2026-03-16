@@ -12,7 +12,7 @@ namespace Game.UI
             gameOverPanel.SetActive(true);
         }
 
-        public void OnRestart()
+        public void Hide()
         {
             gameOverPanel.SetActive(false);
         }
