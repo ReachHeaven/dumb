@@ -10,9 +10,9 @@ namespace Game.Core
         private const int MaxCapacity = 16;
         private const int GridSize = 4;
         private int[,] _cells = new int[GridSize, GridSize];
-        private int _score;
         private readonly Random _random = new();
 
+        private int _score;
         public int Score => _score;
 
         /// <summary>

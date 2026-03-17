@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Game.Core;
 using TMPro;
 using UnityEngine;
 
@@ -11,12 +11,12 @@ namespace Game.UI
 
         public void Start()
         {
-            bestScoreText.text = $"Best Score: {PlayerPrefs.GetInt("BestScore")}";
+            bestScoreText.text = $"Best Score: {PlayerPrefs.GetInt(PrefsKeys.BestScore)}";
         }
 
         public void Show()
         {
-            bestScoreText.text = $"Best Score: {PlayerPrefs.GetInt("BestScore")}";
+            bestScoreText.text = $"Best Score: {PlayerPrefs.GetInt(PrefsKeys.BestScore)}";
             menuView.SetActive(true);
         }
 

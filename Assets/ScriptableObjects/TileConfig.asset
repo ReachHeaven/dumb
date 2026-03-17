@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d92c53db774288aec43444efb63085, type: 3}
+  m_Name: TileConfig
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Data.TileConfig
+  _tiles:
+  - value: 2
+    name: Bacteria
+    color: {r: 0.101960786, g: 0.101960786, b: 0.18039216, a: 1}
+    icon: {fileID: 1725080897922056386, guid: fbe3b8654613b6a49bd49a43687725bd, type: 3}
+  - value: 4
+    name: Fish
+    color: {r: 0.08627451, g: 0.12941177, b: 0.24313726, a: 1}
+    icon: {fileID: 0}
+  - value: 8
+    name: Lizard
+    color: {r: 0.05882353, g: 0.20392157, b: 0.3764706, a: 1}
+    icon: {fileID: 0}
+  - value: 16
+    name: Lizard
+    color: {r: 0.105882354, g: 0.2627451, b: 0.19607843, a: 1}
+    icon: {fileID: 0}
+  - value: 32
+    name: Cat
+    color: {r: 0.1764706, g: 0.41568628, b: 0.30980393, a: 1}
+    icon: {fileID: 0}
+  - value: 64
+    name: Dog
+    color: {r: 0.3254902, g: 0.20392157, b: 0.5137255, a: 1}
+    icon: {fileID: 0}
+  - value: 128
+    name: Wolf
+    color: {r: 0.35686275, g: 0.17254902, b: 0.43529412, a: 1}
+    icon: {fileID: 0}
+  - value: 256
+    name: Monkey
+    color: {r: 0.47058824, g: 0.25882354, b: 0.07058824, a: 1}
+    icon: {fileID: 0}
+  - value: 512
+    name: Man
+    color: {r: 0.10980392, g: 0.43137255, b: 0.6431373, a: 1}
+    icon: {fileID: 0}
+  - value: 1024
+    name: Devil
+    color: {r: 0.7176471, g: 0.03529412, b: 0.29803923, a: 1}
+    icon: {fileID: 0}
+  - value: 2048
+    name: God
+    color: {r: 0.8784314, g: 0.65882355, b: 0, a: 1}
+    icon: {fileID: 0}

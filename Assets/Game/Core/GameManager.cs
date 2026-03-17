@@ -1,5 +1,4 @@
-﻿using System;
-using Foundation;
+﻿using Foundation;
 using Foundation.Events;
 using Game.Data;
 using UnityEngine;
@@ -15,13 +14,12 @@ namespace Game.Core
         [SerializeField] private BoardData boardData;
         [SerializeField] private GameEvent onBoardChanged;
         [SerializeField] private GameEvent onGameStarted;
-        [SerializeField] private GameEvent onMenuFromGameOver;
         private readonly GameBoard _gameBoard = new();
         private int _bestScore;
 
         private void Start()
         {
-            _bestScore = PlayerPrefs.GetInt("BestScore", 0);
+            _bestScore = PlayerPrefs.GetInt(PrefsKeys.BestScore, 0);
         }
 
         /// <summary>
@@ -39,7 +37,7 @@ namespace Game.Core
                 if (_gameBoard.Score > _bestScore)
                 {
                     _bestScore = _gameBoard.Score;
-                    PlayerPrefs.SetInt("BestScore", _bestScore);
+                    PlayerPrefs.SetInt(PrefsKeys.BestScore, _bestScore);
                     onBestScoreChanged.Raise();
                 }
 
@@ -65,15 +63,6 @@ namespace Game.Core
             onGameStarted.Raise();
             boardData.UpdateBoard(_gameBoard.GetFlatBoard());
             onBoardChanged.Raise();
-            onScoreChanged.Raise(0);
-        }
-
-        /// <summary>
-        /// Go to menu
-        /// </summary>
-        public void OnMenuFromGameOver()
-        {
-            onMenuFromGameOver.Raise();
             onScoreChanged.Raise(0);
         }
 
