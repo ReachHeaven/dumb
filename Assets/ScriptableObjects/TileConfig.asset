@@ -20,40 +20,40 @@ MonoBehaviour:
   - value: 4
     name: Fish
     color: {r: 0.08627451, g: 0.12941177, b: 0.24313726, a: 1}
-    icon: {fileID: 0}
+    icon: {fileID: 8966945178157639174, guid: 82ba8579509ab11419e9fff250e41a07, type: 3}
   - value: 8
     name: Lizard
     color: {r: 0.05882353, g: 0.20392157, b: 0.3764706, a: 1}
-    icon: {fileID: 0}
+    icon: {fileID: -6383312658857005041, guid: 2c12f0e2816029a43b6d818db833dfe7, type: 3}
   - value: 16
-    name: Lizard
+    name: Chameleon
     color: {r: 0.105882354, g: 0.2627451, b: 0.19607843, a: 1}
-    icon: {fileID: 0}
+    icon: {fileID: -6198430549947060876, guid: d39fb63ebe22f8b41bd9068ea70e109b, type: 3}
   - value: 32
     name: Cat
     color: {r: 0.1764706, g: 0.41568628, b: 0.30980393, a: 1}
-    icon: {fileID: 0}
+    icon: {fileID: -5022614552731719040, guid: 74a46d62fd98c9040bca3bdcb32cb870, type: 3}
   - value: 64
     name: Dog
     color: {r: 0.3254902, g: 0.20392157, b: 0.5137255, a: 1}
-    icon: {fileID: 0}
+    icon: {fileID: 1480917699468073914, guid: 6b2e52215a7ab6841947d1a878cf6a93, type: 3}
   - value: 128
     name: Wolf
     color: {r: 0.35686275, g: 0.17254902, b: 0.43529412, a: 1}
-    icon: {fileID: 0}
+    icon: {fileID: 7444046612802208997, guid: e5c8fa3be7c77c244a4560557217decb, type: 3}
   - value: 256
     name: Monkey
     color: {r: 0.47058824, g: 0.25882354, b: 0.07058824, a: 1}
-    icon: {fileID: 0}
+    icon: {fileID: -4798825762170945512, guid: 97a398eb4fc8c6a4581e658efd0dd38e, type: 3}
   - value: 512
     name: Man
     color: {r: 0.10980392, g: 0.43137255, b: 0.6431373, a: 1}
-    icon: {fileID: 0}
+    icon: {fileID: 6737724048487822203, guid: eff76c2def17b244ab3b5900279933e7, type: 3}
   - value: 1024
     name: Devil
     color: {r: 0.7176471, g: 0.03529412, b: 0.29803923, a: 1}
-    icon: {fileID: 0}
+    icon: {fileID: -3715280972482791317, guid: 4268fc5ffdaece74e89250a8657bd9ee, type: 3}
   - value: 2048
     name: God
     color: {r: 0.8784314, g: 0.65882355, b: 0, a: 1}
-    icon: {fileID: 0}
+    icon: {fileID: -257879637893371741, guid: 927d940dd9122914a8f60499e6bb33f2, type: 3}
