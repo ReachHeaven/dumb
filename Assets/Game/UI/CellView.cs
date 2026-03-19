@@ -17,12 +17,13 @@ namespace Game.UI
         public void SetValue(int value)
         {
             TileData data = tileConfig.GetTileData(value);
-            background.color = data.color;
+            background.color = Color.black;
 
             if (data.icon != null)
             {
                 valueText.gameObject.SetActive(false);
                 icon.sprite = data.icon;
+                icon.color = Color.white;
                 icon.gameObject.SetActive(true);
             }
             else
@@ -37,7 +38,6 @@ namespace Game.UI
         {
             StartCoroutine(MergeAnimation());
         }
-
 
         private IEnumerator MergeAnimation()
         {
