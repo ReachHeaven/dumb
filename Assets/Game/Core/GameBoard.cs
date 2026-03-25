@@ -231,6 +231,20 @@ namespace Game.Core
             _cells[cell.row, cell.col] = value;
         }
 
+        public void DebugFillAll()
+        {
+            int value = 2;
+            for (int i = 0; i < GridSize; i++)
+            {
+                for (int j = 0; j < GridSize; j++)
+                {
+                    _cells[i, j] = value;
+                    value *= 2;
+                    if (value > 2048) value = 2;
+                }
+            }
+        }
+
         public void Reset()
         {
             _cells = new int[GridSize, GridSize];

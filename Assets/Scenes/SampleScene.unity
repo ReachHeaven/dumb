@@ -379,7 +379,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &47452219
 MonoBehaviour:
@@ -396,7 +396,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8039216, g: 0.75686276, b: 0.7058824, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 10, y: 10, z: 10, w: 10}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -553,15 +553,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Restart
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -578,8 +578,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -918,6 +918,7 @@ GameObject:
   - component: {fileID: 117257026}
   - component: {fileID: 117257025}
   - component: {fileID: 117257028}
+  - component: {fileID: 117257029}
   m_Layer: 5
   m_Name: Cell (3)
   m_TagString: Untagged
@@ -942,10 +943,10 @@ RectTransform:
   - {fileID: 34779365}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -80}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &117257025
 MonoBehaviour:
@@ -963,6 +964,7 @@ MonoBehaviour:
   background: {fileID: 739654689}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 34779366}
+  breathAnimation: {fileID: 117257029}
 --- !u!114 &117257026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -976,7 +978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.14509805, g: 0.14509805, b: 0.2509804, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1016,6 +1018,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &117257029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117257023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 34779366}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &151439057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,6 +1513,7 @@ GameObject:
   - component: {fileID: 321123990}
   - component: {fileID: 321123992}
   - component: {fileID: 321123993}
+  - component: {fileID: 321123994}
   m_Layer: 5
   m_Name: Cell
   m_TagString: Untagged
@@ -1519,10 +1538,10 @@ RectTransform:
   - {fileID: 1816483481}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 80, y: -80}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &321123990
 MonoBehaviour:
@@ -1578,6 +1597,7 @@ MonoBehaviour:
   background: {fileID: 2095734840}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 1816483482}
+  breathAnimation: {fileID: 321123994}
 --- !u!114 &321123993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1593,6 +1613,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &321123994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321123988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 1816483482}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &347285848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2454,6 +2490,7 @@ GameObject:
   - component: {fileID: 538272055}
   - component: {fileID: 538272054}
   - component: {fileID: 538272057}
+  - component: {fileID: 538272058}
   m_Layer: 5
   m_Name: Cell (14)
   m_TagString: Untagged
@@ -2478,10 +2515,10 @@ RectTransform:
   - {fileID: 1516709676}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 360, y: -500}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &538272054
 MonoBehaviour:
@@ -2499,6 +2536,7 @@ MonoBehaviour:
   background: {fileID: 244076231}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 1516709677}
+  breathAnimation: {fileID: 538272058}
 --- !u!114 &538272055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2552,6 +2590,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &538272058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538272052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 1516709677}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &556489326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2565,6 +2619,7 @@ GameObject:
   - component: {fileID: 556489329}
   - component: {fileID: 556489328}
   - component: {fileID: 556489331}
+  - component: {fileID: 556489332}
   m_Layer: 5
   m_Name: Cell (11)
   m_TagString: Untagged
@@ -2589,10 +2644,10 @@ RectTransform:
   - {fileID: 1593299641}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -360}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &556489328
 MonoBehaviour:
@@ -2610,6 +2665,7 @@ MonoBehaviour:
   background: {fileID: 59479870}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 1593299642}
+  breathAnimation: {fileID: 556489332}
 --- !u!114 &556489329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2663,6 +2719,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &556489332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556489326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 1593299642}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &585807198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,7 +2906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 800}
+  m_AnchoredPosition: {x: 0, y: 660}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &602359169
@@ -2884,8 +2956,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 44
+  m_fontSizeBase: 44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3542,7 +3614,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &737238608
 MonoBehaviour:
@@ -3559,7 +3631,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8039216, g: 0.75686276, b: 0.7058824, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 10, y: 10, z: 10, w: 10}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3617,7 +3689,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &739654689
 MonoBehaviour:
@@ -3634,7 +3706,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8039216, g: 0.75686276, b: 0.7058824, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 10, y: 10, z: 10, w: 10}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3670,6 +3742,7 @@ GameObject:
   - component: {fileID: 755455709}
   - component: {fileID: 755455708}
   - component: {fileID: 755455711}
+  - component: {fileID: 755455712}
   m_Layer: 5
   m_Name: Cell (8)
   m_TagString: Untagged
@@ -3694,10 +3767,10 @@ RectTransform:
   - {fileID: 354562337}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 80, y: -360}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &755455708
 MonoBehaviour:
@@ -3715,6 +3788,7 @@ MonoBehaviour:
   background: {fileID: 1051792186}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 354562338}
+  breathAnimation: {fileID: 755455712}
 --- !u!114 &755455709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3768,6 +3842,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &755455712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755455706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 354562338}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &760229946
 GameObject:
   m_ObjectHideFlags: 0
@@ -4055,6 +4145,7 @@ GameObject:
   - component: {fileID: 814521430}
   - component: {fileID: 814521429}
   - component: {fileID: 814521432}
+  - component: {fileID: 814521433}
   m_Layer: 5
   m_Name: Cell (12)
   m_TagString: Untagged
@@ -4079,10 +4170,10 @@ RectTransform:
   - {fileID: 1895144430}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 80, y: -500}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &814521429
 MonoBehaviour:
@@ -4100,6 +4191,7 @@ MonoBehaviour:
   background: {fileID: 1747828807}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 1895144431}
+  breathAnimation: {fileID: 814521433}
 --- !u!114 &814521430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4153,6 +4245,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &814521433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814521427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 1895144431}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &851104861
 GameObject:
   m_ObjectHideFlags: 0
@@ -4166,6 +4274,7 @@ GameObject:
   - component: {fileID: 851104864}
   - component: {fileID: 851104863}
   - component: {fileID: 851104866}
+  - component: {fileID: 851104867}
   m_Layer: 5
   m_Name: Cell (7)
   m_TagString: Untagged
@@ -4190,10 +4299,10 @@ RectTransform:
   - {fileID: 1965048623}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -220}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &851104863
 MonoBehaviour:
@@ -4211,6 +4320,7 @@ MonoBehaviour:
   background: {fileID: 155843884}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 1965048624}
+  breathAnimation: {fileID: 851104867}
 --- !u!114 &851104864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4264,6 +4374,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &851104867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851104861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 1965048624}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &973092854
 GameObject:
   m_ObjectHideFlags: 0
@@ -4639,6 +4765,7 @@ GameObject:
   - component: {fileID: 1036914445}
   - component: {fileID: 1036914444}
   - component: {fileID: 1036914447}
+  - component: {fileID: 1036914448}
   m_Layer: 5
   m_Name: Cell (10)
   m_TagString: Untagged
@@ -4663,10 +4790,10 @@ RectTransform:
   - {fileID: 1028319283}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 360, y: -360}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1036914444
 MonoBehaviour:
@@ -4684,6 +4811,7 @@ MonoBehaviour:
   background: {fileID: 1972450334}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 1028319284}
+  breathAnimation: {fileID: 1036914448}
 --- !u!114 &1036914445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4737,6 +4865,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &1036914448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036914442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 1028319284}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &1051792184
 GameObject:
   m_ObjectHideFlags: 0
@@ -5231,6 +5375,7 @@ GameObject:
   - component: {fileID: 1148909880}
   - component: {fileID: 1148909879}
   - component: {fileID: 1148909882}
+  - component: {fileID: 1148909883}
   m_Layer: 5
   m_Name: Cell (2)
   m_TagString: Untagged
@@ -5255,10 +5400,10 @@ RectTransform:
   - {fileID: 347285849}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 360, y: -80}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1148909879
 MonoBehaviour:
@@ -5276,6 +5421,7 @@ MonoBehaviour:
   background: {fileID: 47452219}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 347285850}
+  breathAnimation: {fileID: 1148909883}
 --- !u!114 &1148909880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5289,7 +5435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.14509805, g: 0.14509805, b: 0.2509804, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5329,6 +5475,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &1148909883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148909877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 347285850}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &1179503351
 GameObject:
   m_ObjectHideFlags: 0
@@ -5440,7 +5602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 700}
+  m_AnchoredPosition: {x: 100, y: 500}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1219897605
@@ -5512,14 +5674,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5841,6 +6003,7 @@ GameObject:
   - component: {fileID: 1503377114}
   - component: {fileID: 1503377113}
   - component: {fileID: 1503377116}
+  - component: {fileID: 1503377117}
   m_Layer: 5
   m_Name: Cell (4)
   m_TagString: Untagged
@@ -5865,10 +6028,10 @@ RectTransform:
   - {fileID: 1969005651}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 80, y: -220}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1503377113
 MonoBehaviour:
@@ -5886,6 +6049,7 @@ MonoBehaviour:
   background: {fileID: 1016254635}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 1969005652}
+  breathAnimation: {fileID: 1503377117}
 --- !u!114 &1503377114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5939,6 +6103,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &1503377117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503377111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 1969005652}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &1516709675
 GameObject:
   m_ObjectHideFlags: 0
@@ -6035,7 +6215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1527857091
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6175,9 +6355,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1527857090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4e839dc056b45e3b6291751bc7fe691, type: 3}
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 1527857092}
+  autostart: 1
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &1544817328
 GameObject:
   m_ObjectHideFlags: 0
@@ -6409,7 +6593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1651894697
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6478,9 +6662,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1651894696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4e839dc056b45e3b6291751bc7fe691, type: 3}
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 1651894698}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &1663602471
 GameObject:
   m_ObjectHideFlags: 0
@@ -6517,7 +6705,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 700}
+  m_AnchoredPosition: {x: -100, y: 500}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1663602473
@@ -6601,14 +6789,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6639,6 +6827,7 @@ GameObject:
   - component: {fileID: 1664750042}
   - component: {fileID: 1664750041}
   - component: {fileID: 1664750044}
+  - component: {fileID: 1664750045}
   m_Layer: 5
   m_Name: Cell (13)
   m_TagString: Untagged
@@ -6663,10 +6852,10 @@ RectTransform:
   - {fileID: 495795436}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 220, y: -500}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1664750041
 MonoBehaviour:
@@ -6684,6 +6873,7 @@ MonoBehaviour:
   background: {fileID: 179933287}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 495795437}
+  breathAnimation: {fileID: 1664750045}
 --- !u!114 &1664750042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6737,6 +6927,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &1664750045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664750039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 495795437}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &1669000306
 GameObject:
   m_ObjectHideFlags: 0
@@ -6887,6 +7093,7 @@ GameObject:
   - component: {fileID: 1687543717}
   - component: {fileID: 1687543716}
   - component: {fileID: 1687543719}
+  - component: {fileID: 1687543720}
   m_Layer: 5
   m_Name: Cell (6)
   m_TagString: Untagged
@@ -6911,10 +7118,10 @@ RectTransform:
   - {fileID: 524369601}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 360, y: -220}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1687543716
 MonoBehaviour:
@@ -6932,6 +7139,7 @@ MonoBehaviour:
   background: {fileID: 622654808}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 524369602}
+  breathAnimation: {fileID: 1687543720}
 --- !u!114 &1687543717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6985,6 +7193,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &1687543720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687543714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 524369602}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &1714359697
 GameObject:
   m_ObjectHideFlags: 0
@@ -7135,13 +7359,14 @@ GameObject:
   - component: {fileID: 1715754805}
   - component: {fileID: 1715754808}
   - component: {fileID: 1715754809}
+  - component: {fileID: 1715754810}
   m_Layer: 5
   m_Name: GameOverPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1715754804
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7229,6 +7454,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e839dc056b45e3b6291751bc7fe691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+--- !u!114 &1715754810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715754803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 1715754805}
+  autostart: 1
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &1747828805
 GameObject:
   m_ObjectHideFlags: 0
@@ -7338,7 +7579,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 500}
+  m_AnchoredPosition: {x: 0, y: 400}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1782261963
@@ -7666,6 +7907,7 @@ GameObject:
   - component: {fileID: 1875546030}
   - component: {fileID: 1875546029}
   - component: {fileID: 1875546032}
+  - component: {fileID: 1875546033}
   m_Layer: 5
   m_Name: Cell (1)
   m_TagString: Untagged
@@ -7690,10 +7932,10 @@ RectTransform:
   - {fileID: 2083193724}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 220, y: -80}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1875546029
 MonoBehaviour:
@@ -7711,6 +7953,7 @@ MonoBehaviour:
   background: {fileID: 737238608}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 2083193725}
+  breathAnimation: {fileID: 1875546033}
 --- !u!114 &1875546030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7764,6 +8007,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &1875546033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875546027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 2083193725}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &1895144429
 GameObject:
   m_ObjectHideFlags: 0
@@ -7990,6 +8249,7 @@ GameObject:
   - component: {fileID: 1897620403}
   - component: {fileID: 1897620402}
   - component: {fileID: 1897620405}
+  - component: {fileID: 1897620406}
   m_Layer: 5
   m_Name: Cell (15)
   m_TagString: Untagged
@@ -8004,7 +8264,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897620400}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8014,10 +8274,10 @@ RectTransform:
   - {fileID: 32897841}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -500}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1897620402
 MonoBehaviour:
@@ -8035,6 +8295,7 @@ MonoBehaviour:
   background: {fileID: 974273589}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 32897842}
+  breathAnimation: {fileID: 1897620406}
 --- !u!114 &1897620403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8088,6 +8349,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &1897620406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897620400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 32897842}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &1911758973
 GameObject:
   m_ObjectHideFlags: 0
@@ -8199,8 +8476,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 400}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 200}
+  m_SizeDelta: {x: 260, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915660776
 MonoBehaviour:
@@ -8271,14 +8548,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8477,6 +8754,7 @@ GameObject:
   - component: {fileID: 1942676503}
   - component: {fileID: 1942676502}
   - component: {fileID: 1942676505}
+  - component: {fileID: 1942676506}
   m_Layer: 5
   m_Name: Cell (9)
   m_TagString: Untagged
@@ -8501,10 +8779,10 @@ RectTransform:
   - {fileID: 1230299413}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 220, y: -360}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1942676502
 MonoBehaviour:
@@ -8522,6 +8800,7 @@ MonoBehaviour:
   background: {fileID: 1179503353}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 1230299414}
+  breathAnimation: {fileID: 1942676506}
 --- !u!114 &1942676503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8575,6 +8854,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &1942676506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942676500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 1230299414}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &1965048622
 GameObject:
   m_ObjectHideFlags: 0
@@ -8813,6 +9108,7 @@ GameObject:
   - component: {fileID: 1991276821}
   - component: {fileID: 1991276820}
   - component: {fileID: 1991276823}
+  - component: {fileID: 1991276824}
   m_Layer: 5
   m_Name: Cell (5)
   m_TagString: Untagged
@@ -8837,10 +9133,10 @@ RectTransform:
   - {fileID: 1911758974}
   m_Father: {fileID: 1544817329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 220, y: -220}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1991276820
 MonoBehaviour:
@@ -8858,6 +9154,7 @@ MonoBehaviour:
   background: {fileID: 15329107}
   tileConfig: {fileID: 11400000, guid: 503784953eebf8b4ba03ab839d6e7486, type: 2}
   icon: {fileID: 1911758975}
+  breathAnimation: {fileID: 1991276824}
 --- !u!114 &1991276821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8911,6 +9208,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &1991276824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991276818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708484095787bb4b962966053abd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.UI.BreathAnimation
+  _image: {fileID: 1911758975}
+  autostart: 0
+  sourceColor: {r: 1, g: 1, b: 1, a: 1}
+  targetColor: {r: 0.854902, g: 0.6470588, b: 0.1254902, a: 1}
 --- !u!1 &2005278567
 GameObject:
   m_ObjectHideFlags: 0
@@ -8968,17 +9281,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MenuButton
+  m_text: To menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8995,8 +9308,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9107,15 +9420,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9132,8 +9445,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 44
+  m_fontSizeBase: 44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9295,7 +9608,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2095734840
 MonoBehaviour:
@@ -9312,7 +9625,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8039216, g: 0.75686276, b: 0.7058824, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 10, y: 10, z: 10, w: 10}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

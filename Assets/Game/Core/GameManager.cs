@@ -2,6 +2,7 @@
 using Foundation.Events;
 using Game.Data;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Game.Core
 {
@@ -16,6 +17,18 @@ namespace Game.Core
         [SerializeField] private GameEvent onGameStarted;
         private readonly GameBoard _gameBoard = new();
         private int _bestScore;
+
+#if UNITY_EDITOR
+        private void Update()
+        {
+            if (Keyboard.current.f1Key.wasPressedThisFrame)
+            {
+                _gameBoard.DebugFillAll();
+                boardData.UpdateBoard(_gameBoard.GetFlatBoard());
+                onBoardChanged.Raise();
+            }
+        }
+#endif
 
         private void Start()
         {

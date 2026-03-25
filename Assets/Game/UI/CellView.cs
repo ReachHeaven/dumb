@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Game.Data;
 using TMPro;
 using UnityEngine;
@@ -13,9 +14,24 @@ namespace Game.UI
         [SerializeField] private Image background;
         [SerializeField] private TileConfig tileConfig;
         [SerializeField] private Image icon;
+        [SerializeField] private BreathAnimation breathAnimation;
 
         public void SetValue(int value)
         {
+            if (breathAnimation == null) Debug.LogError($"breathAnimation null on {gameObject.name}");
+            if (icon == null) Debug.LogError($"icon null on {gameObject.name}");
+            if (tileConfig == null) Debug.LogError($"tileConfig null on {gameObject.name}");
+            if (background == null) Debug.LogError($"background null on {gameObject.name}");
+
+            if (value == 0)
+            {
+                icon.gameObject.SetActive(false);
+                valueText.gameObject.SetActive(false);
+                background.color = Color.black;
+                breathAnimation.StopPulse();
+                return;
+            }
+
             TileData data = tileConfig.GetTileData(value);
             background.color = Color.black;
 
@@ -25,12 +41,14 @@ namespace Game.UI
                 icon.sprite = data.icon;
                 icon.color = Color.white;
                 icon.gameObject.SetActive(true);
+                breathAnimation.SetColor(data.color);
             }
             else
             {
                 icon.gameObject.SetActive(false);
                 valueText.gameObject.SetActive(true);
-                valueText.text = value == 0 ? "" : value.ToString();
+                valueText.text = value.ToString();
+                breathAnimation.StopPulse();
             }
         }
 

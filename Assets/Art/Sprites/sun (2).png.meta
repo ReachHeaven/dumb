@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: d39fb63ebe22f8b41bd9068ea70e109b
+guid: 99c4763063982904b9c0decdaf698f80
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6198430549947060876
-    second: chameleon_0
+      213: -198587242222287588
+    second: sun (2)_0
+  - first:
+      213: 275049431246992758
+    second: sun (2)_1
+  - first:
+      213: 2451893873422356149
+    second: sun (2)_2
+  - first:
+      213: -7574259081710461981
+    second: sun (2)_3
+  - first:
+      213: 1444792302759631671
+    second: sun (2)_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +58,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -152,13 +164,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chameleon_0
+      name: sun (2)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 58
-        width: 512
-        height: 396
+        x: 34
+        y: 34
+        width: 186
+        height: 183
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +179,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47de9796140caf9a0800000000000000
-      internalID: -6198430549947060876
+      spriteID: c158a6294f97e3df0800000000000000
+      internalID: -198587242222287588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sun (2)_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 168
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 675762d100c21d300800000000000000
+      internalID: 275049431246992758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sun (2)_2
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 169
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5becb48bc70e60220800000000000000
+      internalID: 2451893873422356149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sun (2)_3
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 60
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb1fddce73d2e690800000000000000
+      internalID: -7574259081710461981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sun (2)_4
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 61
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73bd43cc1feec0410800000000000000
+      internalID: 1444792302759631671
       vertices: []
       indices: 
       edges: []
@@ -177,7 +277,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -187,7 +287,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      chameleon_0: -6198430549947060876
+      sun (2)_0: -198587242222287588
+      sun (2)_1: 275049431246992758
+      sun (2)_2: 2451893873422356149
+      sun (2)_3: -7574259081710461981
+      sun (2)_4: 1444792302759631671
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -8,26 +8,43 @@ namespace Game.UI
 {
     public class BreathAnimation : MonoBehaviour
     {
-        private Image _image;
+        [SerializeField] private Image _image;
+        [SerializeField] private bool autostart;
+        [SerializeField] private Color sourceColor = Color.white;
+        [SerializeField] private Color targetColor = Color.goldenRod;
 
-        public void Start()
+        // public void Start()
+        // {
+        //     Debug.Log("Start coroutine in Start method");
+        //     StartCoroutine(ColorBreathe());
+        // }
+
+        private void OnEnable()
         {
-            _image = GetComponent<Image>();
-            if (_image == null)
+            if (autostart)
             {
-                Debug.LogError("Image component not found!");
-                return;
+                StartCoroutine(ColorBreathe());
             }
-            Debug.Log($"{_image.sprite.name}");
-            Debug.Log("Start coroutine in Start method");
+        }
+
+        public void StopPulse()
+        {
+            Debug.Log("StopPulse");
+            StopAllCoroutines();
+        }
+
+        public void SetColor(Color color)
+        {
+            targetColor = color;
+            StopAllCoroutines();
             StartCoroutine(ColorBreathe());
         }
 
 
         private IEnumerator ColorBreathe()
         {
-            Color baseColor = _image.color;
-            Color finalColor = Color.goldenRod;
+            Color baseColor = sourceColor;
+            Color finalColor = targetColor;
             finalColor.a = 1f;
 
             while (true)
