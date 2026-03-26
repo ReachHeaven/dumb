@@ -10,6 +10,7 @@ namespace Game.UI
         [SerializeField] private GameObject menuView;
         [SerializeField] private TMP_Text bestScoreText;
         [SerializeField] private Button startButton;
+        [SerializeField] private TMP_Text startButtonText;
 
         public void Start()
         {
@@ -19,6 +20,8 @@ namespace Game.UI
         public void Show()
         {
             bestScoreText.text = $"Best Score: {PlayerPrefs.GetInt(PrefsKeys.BestScore)}";
+            startButton.gameObject.SetActive(true);
+            startButtonText.gameObject.SetActive(true);
             menuView.SetActive(true);
         }
 

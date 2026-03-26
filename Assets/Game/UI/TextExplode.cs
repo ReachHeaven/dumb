@@ -13,10 +13,16 @@ namespace Game.UI
         [SerializeField] private Image pixelPrefab;
         [SerializeField] private Transform canvas;
         [SerializeField] private int pixelCount = 30;
+        [SerializeField] private GameManager gameManager;
+        private bool _isClicked;
 
         public void Play()
         {
-            StartCoroutine(ExplodeSequence());
+            if (!_isClicked)
+            {
+                _isClicked = true;
+                StartCoroutine(ExplodeSequence());
+            }
         }
 
         private IEnumerator ExplodeSequence()
@@ -24,6 +30,9 @@ namespace Game.UI
             yield return Shake(0.3f, 8f);
             text.gameObject.SetActive(false);
             SpawnPixels();
+            yield return new WaitForSeconds(0.5f);
+            gameManager.OnGameStarted();
+            _isClicked = false;
         }
 
         private IEnumerator Shake(float duration, float intensity)
