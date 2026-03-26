@@ -4,6 +4,7 @@ using Game.Core;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 namespace Game.UI
 {
@@ -13,7 +14,7 @@ namespace Game.UI
         [SerializeField] private Image pixelPrefab;
         [SerializeField] private Transform canvas;
         [SerializeField] private int pixelCount = 30;
-        [SerializeField] private GameManager gameManager;
+        [SerializeField] private UnityEvent response;
         private bool _isClicked;
 
         public void Play()
@@ -31,7 +32,7 @@ namespace Game.UI
             text.gameObject.SetActive(false);
             SpawnPixels();
             yield return new WaitForSeconds(0.5f);
-            gameManager.OnGameStarted();
+            response.Invoke();
             _isClicked = false;
         }
 
@@ -78,12 +79,10 @@ namespace Game.UI
 
         private IEnumerator ExplodePixel(Image pixel, Vector3 center)
         {
-            // Направление от центра наружу
             Vector2 direction = (pixel.rectTransform.position - center).normalized;
             if (direction == Vector2.zero)
                 direction = Random.insideUnitCircle.normalized;
 
-            // Случайный разброс от основного направления
             direction = Quaternion.Euler(0, 0, Random.Range(-30f, 30f)) * direction;
 
             float speed = Random.Range(400f, 1200f);
@@ -96,17 +95,14 @@ namespace Game.UI
             {
                 float t = elapsed / duration;
 
-                // Движение с замедлением
-                pixel.rectTransform.position += (Vector3)(direction * speed * Time.deltaTime);
+                pixel.rectTransform.position += (Vector3)(direction * (speed * Time.deltaTime));
                 speed *= 0.96f;
 
-                // Вращение
                 pixel.rectTransform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 
-                // Исчезновение в конце
                 if (t > 0.5f)
                 {
-                    color.a = 1f - (t - 0.5f) * 2f;
+                    color.a = 0f;
                     pixel.color = color;
                 }
 
