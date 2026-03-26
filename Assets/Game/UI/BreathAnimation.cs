@@ -13,12 +13,6 @@ namespace Game.UI
         [SerializeField] private Color sourceColor = Color.white;
         [SerializeField] private Color targetColor = Color.goldenRod;
 
-        // public void Start()
-        // {
-        //     Debug.Log("Start coroutine in Start method");
-        //     StartCoroutine(ColorBreathe());
-        // }
-
         private void OnEnable()
         {
             if (autostart)

@@ -1,6 +1,7 @@
 ﻿using Game.Core;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game.UI
 {
@@ -8,6 +9,7 @@ namespace Game.UI
     {
         [SerializeField] private GameObject menuView;
         [SerializeField] private TMP_Text bestScoreText;
+        [SerializeField] private Button startButton;
 
         public void Start()
         {
